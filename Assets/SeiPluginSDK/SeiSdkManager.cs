@@ -1,7 +1,6 @@
 using UnityEngine;
 using SeiSDK.Auth;
 using System.Threading.Tasks;
-using UnityEditor.PackageManager;
 
 #if UNITY_WEBGL
 using SeiSDK.WebCore;
