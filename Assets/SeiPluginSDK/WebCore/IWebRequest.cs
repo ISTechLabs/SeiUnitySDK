@@ -6,6 +6,7 @@ namespace SeiSDK.WebCore
     {
         Guid Guid { get; }
         void SetResult(string webData);
+        void SetError(string message);
         void Cancel();
     }
 }

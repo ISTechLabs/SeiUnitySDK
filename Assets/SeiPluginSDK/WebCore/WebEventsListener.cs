@@ -10,7 +10,7 @@ namespace SeiSDK.WebCore
     {
         private List<IWebRequest> _requests = new List<IWebRequest>();
 
-        public Task<TResponse> Request<TResponse, TRequest>(Action<WebEventRequest> action, TRequest request)
+        public Task<TResponse> Request<TResponse, TRequest>(Action<WebEventRequest> action,TRequest request)
         {
             WebPluginRequest<TResponse> webRequest = new WebPluginRequest<TResponse>();
             _requests.Add(webRequest);
@@ -34,11 +34,14 @@ namespace SeiSDK.WebCore
                 {
                     req.SetResult(webEvent.Response);
                 }
+                else
+                {
+                    req.SetError("Can't find request");
+                }
             }
             else
             {
-                req.Cancel();
-                Debug.LogError(webEvent.Error);
+                req.SetError(webEvent.Error);
             }
 
             _requests.Remove(req);

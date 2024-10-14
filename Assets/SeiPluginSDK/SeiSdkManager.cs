@@ -46,9 +46,9 @@ namespace SeiSDK
 #endif
         }
 
-        public Task<TResponse> Execute<TResponse>(string senderAddress, string contractAddress, TransactionFee transactionFee, string msg)
+        public Task<TResponse> Execute<TResponse>(string senderAddress, string contractAddress, TransactionFee transactionFee, string msg, string memo = null, TransactionAmount[] funds = null)
         {
-            ExecuteRequest executeRequest = new ExecuteRequest(senderAddress, contractAddress, transactionFee, msg);
+            ExecuteRequest executeRequest = new ExecuteRequest(senderAddress, contractAddress, transactionFee, msg, memo, funds);
 
 #if UNITY_WEBGL
             return _seiSdkEventsListener.Request<TResponse, ExecuteRequest>(req => WebBrige.Execute(req), executeRequest);

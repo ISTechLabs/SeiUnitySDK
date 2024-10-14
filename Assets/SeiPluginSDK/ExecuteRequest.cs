@@ -5,17 +5,21 @@ namespace SeiSDK
     [Serializable]
     public class ExecuteRequest
     {
-        public string senderAddress;
-        public string contractAddress;
-        public TransactionFee transactionFee;
-        public string msg;
+        public string SenderAddress;
+        public string ContractAddress;
+        public TransactionFee Fee;
+        public string Message;
+        public string Memo;
+        public TransactionAmount[] Funds;
 
-        public ExecuteRequest(string senderAddress, string contractAddress, TransactionFee transactionFee, string msg)
+        public ExecuteRequest(string senderAddress, string contractAddress, TransactionFee transactionFee, string msg, string memo, TransactionAmount[] funds)
         {
-            this.senderAddress = senderAddress;
-            this.contractAddress = contractAddress;
-            this.transactionFee = transactionFee;
-            this.msg = msg;
+            SenderAddress = senderAddress;
+            ContractAddress = contractAddress;
+            Fee = transactionFee;
+            Message = msg;
+            Memo = memo;
+            Funds = funds;
         }
     }
 }

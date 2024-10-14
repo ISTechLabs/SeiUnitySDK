@@ -33,13 +33,19 @@ namespace SeiSDK.WebCore
             }
             else
             {
-                Debug.LogError("Can't Parse data " + webData);
+                SetError("Can't parse data");
             }
         }
 
         public void Cancel()
         {
             _taskCompletionSource.SetCanceled();
+        }
+
+        public void SetError(string message)
+        {
+            AggregateException aggregateException = new AggregateException(message);
+            _taskCompletionSource.SetException(aggregateException);
         }
     }
 }

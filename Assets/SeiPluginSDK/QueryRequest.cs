@@ -5,13 +5,13 @@ namespace SeiSDK
     [Serializable]
     public class QueryRequest 
     {
-        public string contractAddress;
-        public string msg;
+        public string ContractAddress;
+        public string Query;
 
-        public QueryRequest(string contractAddress, string msg)
+        public QueryRequest(string contractAddress, string query)
         {
-            this.contractAddress = contractAddress;
-            this.msg = msg;
+            ContractAddress = contractAddress;
+            Query = query;
         }
     }
 }
