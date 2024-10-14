@@ -7,7 +7,6 @@ namespace SeiSDK
     public class SampleAuth : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _testText;
-        [SerializeField] private string _contractAddress;
         
         private Wallet _wallet;
 
