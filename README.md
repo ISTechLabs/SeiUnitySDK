@@ -18,6 +18,23 @@ Compass login
             await task;
         }
 ```
+Contract Execute
+```C#
+        public async void Execute()
+        {
+                var task = SeiSdkManager.Instance.Execute<TResponse>(senderAddress, contractAddress, transactionFee, msg, null, null);
+                await task;
+        {
+```
+         
+Contract Query
+```C#
+        public async void Query()
+        {
+                var task = SeiSdkManager.Instance.Query<TResponse>(contractAddress, msg);
+                await task;
+        {
+```
 ______
 
 ## **WEBGL**
