@@ -1,5 +1,8 @@
 ## SeiUnitySDK
 SeiUnitySDK is a tool designed to simplify working with the Sei blockchain within Unity. By combining Unity’s rendering, physics, audio, and animation systems with the fast and efficient Sei blockchain, developers can unlock new possibilities in decentralized game development.
+
+Video setup guide: https://www.youtube.com/watch?v=CnJ8eD0RIXg
+
 ______
 ## **Setup in unity**
 
